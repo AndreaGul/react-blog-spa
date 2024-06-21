@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import ElencoPost from "./components/ElencoPost";
+import Home from "./components/Home";
+import { BrowserRouter,Route,Routes } from "react-router-dom";
 import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_BASE_API_URL;
@@ -58,16 +60,14 @@ function App() {
   
 
   return (
-    <>
-      <Form 
-      tags={tags}
-      categories={categories}
-      onCreate={()=>{
-        fetchPosts();
-      }}
-       />
-      <ElencoPost response={response} />
-    </>
+    <BrowserRouter>
+    <Routes>
+    <Route path="/home" element={ <Home/>}/>
+     
+      
+      
+      </Routes>
+    </BrowserRouter>
   );
 }
 
