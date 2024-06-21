@@ -63,7 +63,14 @@ function App() {
     <BrowserRouter>
     <Routes>
     <Route path="/home" element={ <Home/>}/>
-     
+    <Route path="/posts" element={<ElencoPost response={response} />}/>
+     <Route path="/create" element={<Form 
+      tags={tags}
+      categories={categories}
+      onCreate={()=>{
+        fetchPosts();
+      }}
+       />}/>
       
       
       </Routes>
