@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import ElencoPost from "./components/ElencoPost";
 import Home from "./components/Home";
+import PostSingolo from "./components/PostSingolo";
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import axios from "axios";
 
@@ -64,6 +65,7 @@ function App() {
     <Routes>
     <Route path="/home" element={ <Home/>}/>
     <Route path="/posts" element={<ElencoPost response={response} />}/>
+    <Route path="/posts/:slug" element={<PostSingolo/>}/>
      <Route path="/create" element={<Form 
       tags={tags}
       categories={categories}
